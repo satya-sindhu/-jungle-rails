@@ -3,16 +3,15 @@ class Admin::CategoriesController < ApplicationController
     # http_basic_authenticate_with :name => ENV['ADMIN_NAME'], :password => ENV['ADMIN_PASSWORD']
 
     def index
-        @categories = Category.order(id: :desc).all
+      @categories = Category.all
     end
   
     def new
-        @category = Category.new
+      @category = Category.new
     end
   
     def create
-        @category = Category.new(category_params)
-
+      @category = Category.new(category_params)
     if @category.save
       redirect_to [:admin, :categories], notice: 'Category created!'
     else
@@ -28,4 +27,4 @@ class Admin::CategoriesController < ApplicationController
     )
     end
   
-  end
+  end 
