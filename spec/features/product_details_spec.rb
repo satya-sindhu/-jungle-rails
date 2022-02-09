@@ -25,5 +25,4 @@ RSpec.feature "Visitor navigates to product page from home page", type: :feature
     # DEBUG / VERIFY
     save_screenshot
 end
-
 end 
